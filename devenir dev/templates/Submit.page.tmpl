@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+    <title>Submit</title>
+</head>
+<body>
+    <h1>Inscription</h1>
+    <p>Veuillez remplir les informations pour vous inscrire</p>
+
+    <!-- Single Form to handle submission -->
+    <form action="/Submit" method="POST">
+        <label for="username">Username:</label>
+        <input type="text" name="username" placeholder="Enter username" required>
+        
+        <label for="email">Email:</label>
+        <input type="text" name="email" placeholder="Enter email" required>
+        
+        <label for="password">Password:</label>
+        <input type="password" name="password" placeholder="Enter password" required>
+        
+        <label>Are you an admin?</label>
+        <label for="isAdminYes">
+            <input type="radio" name="isAdmin" value="true" id="isAdminYes" required>
+            Yes
+        </label>
+        <label for="isAdminNo">
+            <input type="radio" name="isAdmin" value="false" id="isAdminNo" required>
+            No
+        </label>
+        
+        <button type="submit">Sign Up</button>
+    </form>
+    
+</body>
+</html>

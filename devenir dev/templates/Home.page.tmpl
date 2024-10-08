@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+    <title>Home</title>
+</head>
+<body>
+    {{if .Currentuser.Isadmin}}
+    <h1>bienvenus tres cher admin {{.Currentuser.Name}} </h1>
+    <p>je suis ilyes rachedi et voici mon premier projet certe il est de niveau medoicre mais chaque chose a un debut et voici le debut de ma carriere en tant que dev</p>
+     
+    <h2>List of Users</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Admin</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{range .Users}}
+            <tr>
+                <td>{{.Name}}</td>
+                <td>{{.Email}}</td>
+                <td>{{if .Isadmin}}Yes{{else}}No{{end}}</td>
+                <td><form action="/deleteUser" method="POST">
+                    <input type="hidden" name="username" value="{{.Name}}">
+                    <button type="submit">Supprimer</button>
+                </form></td>
+            </tr>
+            {{end}}
+        </tbody>
+    </table>
+    {{else}}
+    <h1>bienvenus tres cher Utilisateur {{.Currentuser.Name}} </h1>
+    <p>je suis ilyes rachedi et voici mon premier projet certe il est de niveau medoicre mais chaque chose a un debut et voici le debut de ma carriere en tant que dev</p>
+    {{end}}
+    <a href="http://localhost:3000/login">Sing out</a>
+</body>
+</html>

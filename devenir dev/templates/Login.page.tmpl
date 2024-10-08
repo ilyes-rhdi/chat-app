@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+    <title>Login</title>
+</head>
+<body>
+    <h1>Bienvenue</h1>
+    <p>Connectez-vous</p>
+    <form action="/login" method="POST"> <!-- Changed action to /login -->
+        <input type="text" name="identifier" placeholder="Enter username or email " required>
+        <input type="password" name="password" placeholder="Enter password" required>
+        <button type="submit">Login</button>
+    </form>
+    <a href="http://localhost:3000/Submit">Cliquer ici pour vous inscrire</a>
+</body>
+</html>
